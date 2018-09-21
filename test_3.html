@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <p ref="thisP">{{name}}</p></div>
+
+<script>
+  var vm = new Vue({
+    data:{
+      name:'小小陈先森'
+    }
+  }).$mount("#app")
+
+  vm.name='Tom';
+  console.log(vm.$refs.thisP.textContent);
+  vm.$nextTick(function () {
+    console.log(vm.$refs.thisP.textContent);
+
+  })
+
+</script>
+
+</body>
+</html>

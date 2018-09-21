@@ -1,0 +1,11 @@
+const GET_GOODS = 'GET_GOODS'
+const GET_SELLER = 'GET_SELLER'
+const SHOW_DETAIL = 'SHOW_DETAIL'
+const HIDE_DETAIL = 'HIDE_DETAIL'
+
+export default {
+  GET_GOODS,
+  GET_SELLER,
+  SHOW_DETAIL,
+  HIDE_DETAIL
+}

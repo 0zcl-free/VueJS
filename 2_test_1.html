@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        <my-global></my-global>
+        <my-global></my-global>
+        <my-world></my-world>
+
+    </div>
+
+<script>
+  /**
+   * 方式1：先创建组件构造器，然后由组件构造器创建组件
+   */
+  var myComponent = Vue.extend({
+    template:'<div><h2>This is the use of a global component</h2></div>'
+  });
+  Vue.component('my-global',myComponent);
+
+  /**
+   * 方式2：直接创建组件(推荐)
+   */
+  Vue.component('my-world', {
+    template:'<h1>你好，世界</h1>'
+  })
+
+  new Vue({
+    el: '#app'
+  })
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <p>{{message}}<br>{{reversedMessage}}</p>
+</div>
+
+<script>
+  var vm = new Vue({
+    el: '#app',
+    data: {
+      number: 1,
+      message: 'Hello'
+    },
+    beforeUpdate: function () {
+      console.log('调用了beforeUpdate钩子函数')
+    },
+    updated: function () {
+      console.log('调用了updated钩子函数')
+    },
+    computed: {
+      reversedMessage: function () {
+        return this.message.split("").reverse().join("")
+      }
+    }
+  })
+
+  vm.number = 2
+</script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+
+</head>
+<body>
+
+<div id="app">
+    <button @click="stopWatch">stopWatch</button>
+    <input type="text" v-model="msg">
+    {{msg}}
+</div>
+
+
+<script>
+  var vm = new Vue({
+    el: "#app",
+    data: {
+      msg: "hello"
+    },
+    method:{
+      stopWatch(){
+        console.log("aaaa")
+      //   unwatch()
+      }
+    }
+  })
+
+    var unwatch = vm.$watch('msg', function (newvalue, oldvalue ) {
+      console.log('msg changed')
+      console.log(oldvalue,newvalue)
+    })
+
+
+</script>
+
+</body>
+</html>

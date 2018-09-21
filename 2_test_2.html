@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        <!--<component-a></component-a>-->
+        <component-b></component-b>
+
+
+    </div>
+<script>
+
+  var ComponentB = {
+    data:function(){
+      return {
+        msg:'Hello Vue2.0---Local'
+      }
+    },
+    template:'<div><h2>{{msg}}</h2></div>'
+  }
+
+  new Vue({
+    el: '#app',
+    data:{
+      msg: 'hello zcl'
+    },
+    components: {
+      // 'component-a': ComponentA,
+      'component-b': ComponentB
+    }
+  })
+
+</script>
+
+</body>
+</html>
