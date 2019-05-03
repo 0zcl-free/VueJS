@@ -27,7 +27,7 @@
     </div>
 
     <hr>
-    <button @click="push">添加路由</button>
+    <button @click="pushRouter">添加路由</button>
     <button @click="replace">替换路由</button>
 </div>
 
@@ -88,7 +88,7 @@
     el:'#itany',
     router, //注入路由
     methods:{
-      push(){
+      pushRouter(){
         router.push({path:'home'}); //添加路由，切换路由
       },
       replace(){

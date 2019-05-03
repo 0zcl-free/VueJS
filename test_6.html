@@ -12,6 +12,10 @@
     <h2 v-my-directive>{{msg}}</h2>
     <button @click="change">Update</button>
     <h3 v-world></h3>
+    <div>
+        <!-- 全局注册 -->
+        <input type="text" placeholder="我是全局自定义指令" v-focus>
+    </div>
 </div>
 
 
@@ -33,6 +37,12 @@
     },
     unbind: function () {
       alert("只调用一次，指令与元素解绑时调用")
+    }
+  })
+
+  Vue.directive('focus', {
+    inserted: function (el) {
+      el.focus()
     }
   })
 
